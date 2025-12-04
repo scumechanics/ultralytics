@@ -12,6 +12,7 @@ import torch.nn as nn
 
 from ultralytics.nn.autobackend import check_class_names
 from ultralytics.nn.modules import (
+    EUCB,
     ESSamp,
     AIFI,
     C1,
@@ -1617,6 +1618,12 @@ def parse_model(d, ch, verbose=True):
             args = [ch[f], *args]
             c2 = args[1]
 
+        elif m is EUCB:
+            c2 = make_divisible(min(args[0], max_channels) * width, 8)
+            args = [ch[f],c2]
+
+
+        
         elif m in frozenset({HGStem, HGBlock}):
             c1, cm, c2 = ch[f], args[0], args[1]
             args = [c1, cm, c2, *args[2:]]
