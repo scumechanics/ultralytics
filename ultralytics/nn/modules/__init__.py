@@ -102,7 +102,9 @@ from .transformer import (
     TransformerLayer,
 )
 from .ess import ESSamp
+from .eucb import EUCB
 __all__ = (
+    "EUCB",
     "ESSamp",
     "AIFI",
     "C1",
