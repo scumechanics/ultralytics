@@ -13,6 +13,9 @@ import torch.nn as nn
 from ultralytics.nn.autobackend import check_class_names
 from ultralytics.nn.modules import (
     DCAFE,
+    DCAFE_V2,
+    DCAFE_Lite,
+    DCAFE_Hybrid,
     EUCB,
     ESSamp,
     AIFI,
@@ -1626,6 +1629,10 @@ def parse_model(d, ch, verbose=True):
         elif m is DCAFE:
             args = [ch[f]]
             c2 = ch[f]
+            
+       elif m in {DCAFE_V2, DCAFE_Lite, DCAFE_Hybrid}:
+           c1, c2 = ch[f], args[0] if args else ch[f]
+           args = [c1]
 
         
         elif m in frozenset({HGStem, HGBlock}):
