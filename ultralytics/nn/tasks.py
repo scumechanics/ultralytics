@@ -1630,9 +1630,9 @@ def parse_model(d, ch, verbose=True):
             args = [ch[f]]
             c2 = ch[f]
             
-       elif m in {DCAFE_V2, DCAFE_Lite, DCAFE_Hybrid}:
-           c1, c2 = ch[f], args[0] if args else ch[f]
-           args = [c1]
+        elif m in {DCAFE_V2, DCAFE_Lite, DCAFE_Hybrid}:
+            c1, c2 = ch[f], args[0] if args else ch[f]
+            args = [c1]
 
         
         elif m in frozenset({HGStem, HGBlock}):
