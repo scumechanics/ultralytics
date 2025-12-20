@@ -104,8 +104,12 @@ from .transformer import (
 from .ess import ESSamp
 from .eucb import EUCB
 from .dcafe import DCAFE
+from .dcafe2 import DCAFE_V2,DCAFE_Lite,DCAFE_Hybrid
 __all__ = (
     "DCAFE",
+    "DCAFE_V2",
+    "DCAFE_Lite",
+    "DCAFE_Hybrid",
     "EUCB",
     "ESSamp",
     "AIFI",
