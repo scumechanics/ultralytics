@@ -106,7 +106,10 @@ from .eucb import EUCB
 from .dcafe import DCAFE
 from .dcafe2 import DCAFE_V2,DCAFE_Lite,DCAFE_Hybrid
 from .converse import Converse2D
+from .DFF import *
 __all__ = (
+    "C3k2_DFF_1",
+    "C3k2_DFF_2",
     "Converse2D",
     "DCAFE",
     "DCAFE_V2",
