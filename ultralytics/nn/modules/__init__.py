@@ -105,7 +105,9 @@ from .ess import ESSamp
 from .eucb import EUCB
 from .dcafe import DCAFE
 from .dcafe2 import DCAFE_V2,DCAFE_Lite,DCAFE_Hybrid
+from .converse import Converse2D
 __all__ = (
+    "Converse2D",
     "DCAFE",
     "DCAFE_V2",
     "DCAFE_Lite",
