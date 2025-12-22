@@ -12,6 +12,8 @@ import torch.nn as nn
 
 from ultralytics.nn.autobackend import check_class_names
 from ultralytics.nn.modules import (
+    C3k2_DFF_1, 
+    C3k2_DFF_2,
     Converse2D,
     DCAFE,
     DCAFE_V2,
@@ -1560,6 +1562,8 @@ def parse_model(d, ch, verbose=True):
             SCDown,
             C2fCIB,
             A2C2f,
+            C3k2_DFF_1, 
+            C3k2_DFF_2
         }
     )
     repeat_modules = frozenset(  # modules with 'repeat' arguments
@@ -1579,6 +1583,8 @@ def parse_model(d, ch, verbose=True):
             C2fCIB,
             C2PSA,
             A2C2f,
+            C3k2_DFF_1, 
+            C3k2_DFF_2
         }
     )
     for i, (f, n, m, args) in enumerate(d["backbone"] + d["head"]):  # from, number, module, args
