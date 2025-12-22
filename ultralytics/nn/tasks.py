@@ -12,6 +12,7 @@ import torch.nn as nn
 
 from ultralytics.nn.autobackend import check_class_names
 from ultralytics.nn.modules import (
+    Converse2D,
     DCAFE,
     DCAFE_V2,
     DCAFE_Lite,
@@ -1526,7 +1527,7 @@ def parse_model(d, ch, verbose=True):
     base_modules = frozenset(
         {
             Classify,
-            Conv,
+            Conv,Converse2D,
             ConvTranspose,
             GhostConv,
             Bottleneck,
