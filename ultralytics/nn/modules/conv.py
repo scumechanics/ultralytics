@@ -26,23 +26,23 @@ __all__ = (
     "SpatialAttention",
 )
 
-class BSiLU(nn.Module):
-    """
-    Bounded Sigmoid Linear Unit (B-SiLU) activation function
-    Args:
-        alpha (float): Lower bound parameter, default=1.67
-    """
+# class BSiLU(nn.Module):
+#     """
+#     Bounded Sigmoid Linear Unit (B-SiLU) activation function
+#     Args:
+#         alpha (float): Lower bound parameter, default=1.67
+#     """
 
-    def __init__(self, alpha=1.67):
-        super().__init__()
-        self.alpha = alpha
+#     def __init__(self, alpha=1.67):
+#         super().__init__()
+#         self.alpha = alpha
 
-    def forward(self, x):
-        sig = torch.sigmoid(x)
-        return (x + self.alpha) * sig - self.alpha / 2
+#     def forward(self, x):
+#         sig = torch.sigmoid(x)
+#         return (x + self.alpha) * sig - self.alpha / 2
 
-    def extra_repr(self):
-        return f'alpha={self.alpha}'
+#     def extra_repr(self):
+#         return f'alpha={self.alpha}'
 
 def autopad(k, p=None, d=1):  # kernel, padding, dilation
     """Pad to 'same' shape outputs."""
@@ -63,8 +63,8 @@ class Conv(nn.Module):
         default_act (nn.Module): Default activation function (SiLU).
     """
 
-    # default_act = nn.SiLU()  # default activation
-    default_act = BSiLU()  # default activation
+    default_act = nn.SiLU()  # default activation
+    # default_act = BSiLU()  # default activation
 
     def __init__(self, c1, c2, k=1, s=1, p=None, g=1, d=1, act=True):
         """Initialize Conv layer with given parameters.
