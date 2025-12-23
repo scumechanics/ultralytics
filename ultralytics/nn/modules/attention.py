@@ -1,6 +1,7 @@
 ###################### SKAttention   ####     start   by  AI&CV  ###############################
  
 from torch.nn import init
+import torch.nn as nn
 from collections import OrderedDict
 from ultralytics.nn.modules.conv import Conv
  
