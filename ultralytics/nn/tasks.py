@@ -14,6 +14,8 @@ from ultralytics.nn.modules.CACSYOLO import C3k2_CACS
 from ultralytics.nn.modules.DualConv import DualConv
 from ultralytics.nn.modules.ESC import C3k2_ESC
 
+from ultralytics.nn.modules.attention import SKAttention
+
 from ultralytics.nn.autobackend import check_class_names
 from ultralytics.nn.modules import (
     C3k2_DFF_1, 
@@ -1570,7 +1572,8 @@ def parse_model(d, ch, verbose=True):
             C3k2_DFF_2,
             C3k2_CACS,
             DualConv,
-            C3k2_ESC
+            C3k2_ESC,
+            SKAttention
         }
     )
     repeat_modules = frozenset(  # modules with 'repeat' arguments
