@@ -11,6 +11,7 @@ import torch
 import torch.nn as nn
 
 from ultralytics.nn.modules.CACSYOLO import C3k2_CACS
+from ultralytics.nn.modules.DualConv import DualConv
 
 from ultralytics.nn.autobackend import check_class_names
 from ultralytics.nn.modules import (
@@ -1566,7 +1567,8 @@ def parse_model(d, ch, verbose=True):
             A2C2f,
             C3k2_DFF_1, 
             C3k2_DFF_2,
-            C3k2_CACS
+            C3k2_CACS,
+            DualConv
         }
     )
     repeat_modules = frozenset(  # modules with 'repeat' arguments
