@@ -18,6 +18,7 @@ from ultralytics.nn.modules.attention import SKAttention
 
 from ultralytics.nn.modules.LANet import C3k2_EFAttention
 
+from ultralytics.nn.modules.deformable_attention_2d import DeformableAttention2D
 from ultralytics.nn.autobackend import check_class_names
 from ultralytics.nn.modules import (
     C3k2_DFF_1, 
@@ -1576,7 +1577,8 @@ def parse_model(d, ch, verbose=True):
             DualConv,
             C3k2_ESC,
             SKAttention,
-            C3k2_EFAttention
+            C3k2_EFAttention,
+            DeformableAttention2D
         }
     )
     repeat_modules = frozenset(  # modules with 'repeat' arguments
