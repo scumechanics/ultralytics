@@ -16,6 +16,8 @@ from ultralytics.nn.modules.ESC import C3k2_ESC
 
 from ultralytics.nn.modules.attention import SKAttention
 
+from ultralytics.nn.modules.LANet import C3k2_EFAttention
+
 from ultralytics.nn.autobackend import check_class_names
 from ultralytics.nn.modules import (
     C3k2_DFF_1, 
@@ -1573,7 +1575,8 @@ def parse_model(d, ch, verbose=True):
             C3k2_CACS,
             DualConv,
             C3k2_ESC,
-            SKAttention
+            SKAttention,
+            C3k2_EFAttention
         }
     )
     repeat_modules = frozenset(  # modules with 'repeat' arguments
@@ -1596,7 +1599,8 @@ def parse_model(d, ch, verbose=True):
             C3k2_DFF_1, 
             C3k2_DFF_2,
             C3k2_CACS,
-            C3k2_ESC
+            C3k2_ESC,
+            C3k2_EFAttention
         }
     )
     for i, (f, n, m, args) in enumerate(d["backbone"] + d["head"]):  # from, number, module, args
