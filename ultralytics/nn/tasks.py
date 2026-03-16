@@ -22,6 +22,7 @@ from ultralytics.nn.modules.deformable_attention_2d import DeformableAttention2D
 
 from ultralytics.nn.modules.BiFPN import *
 
+from ultralytics.nn.modules.iEMA import *
 from ultralytics.nn.autobackend import check_class_names
 
 
@@ -1583,7 +1584,8 @@ def parse_model(d, ch, verbose=True):
             C3k2_ESC,
             SKAttention,
             C3k2_EFAttention,
-            DeformableAttention2D
+            DeformableAttention2D,
+            C2PSAiEMA
         }
     )
     repeat_modules = frozenset(  # modules with 'repeat' arguments
@@ -1664,6 +1666,10 @@ def parse_model(d, ch, verbose=True):
             c1, c2 = ch[f], args[0] if args else ch[f]
             args = [c1]
 
+
+        elif m in {iEMA}:
+            c2 = ch[f]
+            args = [c2,*args]
         
         elif m in frozenset({HGStem, HGBlock}):
             c1, cm, c2 = ch[f], args[0], args[1]
