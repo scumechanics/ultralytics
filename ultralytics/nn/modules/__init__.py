@@ -107,6 +107,7 @@ from .dcafe import DCAFE
 from .dcafe2 import DCAFE_V2,DCAFE_Lite,DCAFE_Hybrid
 from .converse import Converse2D
 from .DFF import *
+from .BiFPN import Bi_FPN, BiFPN_Layer, ScalarWeightedFusion, ChannelAttentionFusion
 __all__ = (
     "C3k2_DFF_1",
     "C3k2_DFF_2",
@@ -193,4 +194,8 @@ __all__ = (
     "YOLOEDetect",
     "YOLOESegment",
     "v10Detect",
+    'Bi_FPN',
+    'BiFPN_Layer',
+    'ScalarWeightedFusion',
+    'ChannelAttentionFusion'
 )
