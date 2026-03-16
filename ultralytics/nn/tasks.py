@@ -19,7 +19,12 @@ from ultralytics.nn.modules.attention import SKAttention
 from ultralytics.nn.modules.LANet import C3k2_EFAttention
 
 from ultralytics.nn.modules.deformable_attention_2d import DeformableAttention2D
+
+from ultralytics.nn.modules.BiFPN import *
+
 from ultralytics.nn.autobackend import check_class_names
+
+
 from ultralytics.nn.modules import (
     C3k2_DFF_1, 
     C3k2_DFF_2,
@@ -1692,6 +1697,15 @@ def parse_model(d, ch, verbose=True):
             c2 = args[0]
             c1 = ch[f]
             args = [*args[1:]]
+
+        elif m is Bi_FPN:
+        # f 是 yaml 里 from 字段，ch[x] 取每个输入的通道数
+            length = len([ch[x] for x in f])
+            channels = ch[f[0]]          # 取第一个输入的通道数传给 SE 模块
+            args = [length, channels] + args
+            c2 = ch[f[0]]
+
+        
         else:
             c2 = ch[f]
 
