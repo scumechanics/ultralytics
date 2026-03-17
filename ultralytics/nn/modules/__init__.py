@@ -109,6 +109,8 @@ from .converse import Converse2D
 from .DFF import *
 from .BiFPN import Bi_FPN, BiFPN_Layer, ScalarWeightedFusion, ChannelAttentionFusion
 from .iEMA import *
+from .SD_FAPB    import C2PSA_SDFAPB
+from .SG_CAFusion import SG_CAFusion, SaliencyAuxLoss
 __all__ = (
     "C3k2_DFF_1",
     "C3k2_DFF_2",
@@ -198,5 +200,6 @@ __all__ = (
     'Bi_FPN',
     'BiFPN_Layer',
     'ScalarWeightedFusion',
-    'ChannelAttentionFusion'
+    'ChannelAttentionFusion',
+    'C2PSA_SDFAPB', 'SG_CAFusion', 'SaliencyAuxLoss'
 )
