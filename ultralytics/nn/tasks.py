@@ -25,6 +25,12 @@ from ultralytics.nn.modules.BiFPN import *
 from ultralytics.nn.modules.iEMA import *
 from ultralytics.nn.autobackend import check_class_names
 
+from ultralytics.nn.modules.SD_FAPB    import C2PSA_SDFAPB
+from ultralytics.nn.modules.SG_CAFusion import SG_CAFusion
+
+
+
+
 
 from ultralytics.nn.modules import (
     C3k2_DFF_1, 
@@ -1710,7 +1716,18 @@ def parse_model(d, ch, verbose=True):
             channels = ch[f[0]]          # 取第一个输入的通道数传给 SE 模块
             args = [length, channels] + args
             c2 = ch[f[0]]
-
+        elif m is C2PSA_SDFAPB:
+       # 与 C2PSA 参数一致：c1, c2, n, e
+           args = [ch[f], *args]
+        elif m is SG_CAFusion:
+         # yaml args: [c_out, mode]
+           # from 必须是列表 [i, j]
+           c_high = ch[f[0]]
+           c_low  = ch[f[1]]
+           c_out  = args[0]
+           mode   = args[1] if len(args) > 1 else 'up'
+           args   = [c_high, c_low, c_out, mode]
+           c2     = c_out
         
         else:
             c2 = ch[f]
