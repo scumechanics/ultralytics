@@ -29,7 +29,7 @@ from ultralytics.nn.modules.SD_FAPB    import C2PSA_SDFAPB
 from ultralytics.nn.modules.SG_CAFusion import SG_CAFusion
 
 from ultralytics.nn.modules.DSAM import C2PSA_DSAM,DSAM
-
+from ultralytics.nn.modules.CLCA import *
 
 
 from ultralytics.nn.modules import (
@@ -1592,7 +1592,8 @@ def parse_model(d, ch, verbose=True):
             C3k2_EFAttention,
             DeformableAttention2D,
             C2PSAiEMA,
-            C2PSA_DSAM
+            C2PSA_DSAM,
+            C2PSA_CLCA
         }
     )
     repeat_modules = frozenset(  # modules with 'repeat' arguments
@@ -1675,7 +1676,7 @@ def parse_model(d, ch, verbose=True):
             args = [c1]
 
 
-        elif m in {iEMA}:
+        elif m in {iEMA,CLCA}:
             c2 = ch[f]
             args = [c2,*args]
         
