@@ -28,7 +28,7 @@ from ultralytics.nn.autobackend import check_class_names
 from ultralytics.nn.modules.SD_FAPB    import C2PSA_SDFAPB
 from ultralytics.nn.modules.SG_CAFusion import SG_CAFusion
 
-
+from ultralytics.nn.modules.DSAM import C2PSA_DSAM,DSAM
 
 
 
@@ -1591,7 +1591,8 @@ def parse_model(d, ch, verbose=True):
             SKAttention,
             C3k2_EFAttention,
             DeformableAttention2D,
-            C2PSAiEMA
+            C2PSAiEMA,
+            C2PSA_DSAM
         }
     )
     repeat_modules = frozenset(  # modules with 'repeat' arguments
@@ -1615,7 +1616,8 @@ def parse_model(d, ch, verbose=True):
             C3k2_DFF_2,
             C3k2_CACS,
             C3k2_ESC,
-            C3k2_EFAttention
+            C3k2_EFAttention,
+            C2PSA_DSAM
         }
     )
     for i, (f, n, m, args) in enumerate(d["backbone"] + d["head"]):  # from, number, module, args
@@ -1728,6 +1730,17 @@ def parse_model(d, ch, verbose=True):
            mode   = args[1] if len(args) > 1 else 'up'
            args   = [c_high, c_low, c_out, mode]
            c2     = c_out
+
+         ####attention  innovata
+        elif m is DSAM:
+            c1, c2 = ch[f], args[0]
+            if c2 != nc:
+                c2 = make_divisible(min(c2, max_channels) * width, 8)
+            args = [c1, *args[1:]]
+        ####attention  innovata
+
+
+
         
         else:
             c2 = ch[f]
