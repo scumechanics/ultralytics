@@ -112,6 +112,7 @@ from .iEMA import *
 from .SD_FAPB    import C2PSA_SDFAPB
 from .SG_CAFusion import SG_CAFusion, SaliencyAuxLoss
 from .DSAM import *
+from .CLCA import *
 __all__ = (
     "C3k2_DFF_1",
     "C3k2_DFF_2",
