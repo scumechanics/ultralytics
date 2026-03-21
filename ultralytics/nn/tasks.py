@@ -31,7 +31,7 @@ from ultralytics.nn.modules.SG_CAFusion import SG_CAFusion
 from ultralytics.nn.modules.DSAM import C2PSA_DSAM,DSAM
 from ultralytics.nn.modules.CLCA import *
 from ultralytics.nn.modules.SECA import *
-
+from ultralytics.nn.modules.LGAM import *
 
 from ultralytics.nn.modules import (
     C3k2_DFF_1, 
@@ -1677,7 +1677,7 @@ def parse_model(d, ch, verbose=True):
             args = [c1]
 
 
-        elif m in {iEMA,CLCA,SECA}:
+        elif m in {iEMA,CLCA,SECA,LGAM}:
             c2 = ch[f]
             args = [c2,*args]
         
