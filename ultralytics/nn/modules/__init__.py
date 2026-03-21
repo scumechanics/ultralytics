@@ -114,6 +114,8 @@ from .SG_CAFusion import SG_CAFusion, SaliencyAuxLoss
 from .DSAM import *
 from .CLCA import *
 from .SECA import *
+from .LGAM import *
+
 __all__ = (
     "C3k2_DFF_1",
     "C3k2_DFF_2",
