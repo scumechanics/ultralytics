@@ -117,7 +117,7 @@ from .SECA import *
 from .LGAM import *
 from .DSAttention import *
 from .DSLAM import *
-
+from .SELA import *
 __all__ = (
     "C3k2_DFF_1",
     "C3k2_DFF_2",
