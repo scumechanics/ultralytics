@@ -121,6 +121,8 @@ from .SELA import *
 from .DEMAttention import *
 from .MLAttention import *
 from .LCAttention import *
+from .EPSA import *
+
 
 __all__ = (
     "C3k2_DFF_1",
