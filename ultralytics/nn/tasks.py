@@ -41,7 +41,7 @@ from ultralytics.nn.modules.SELA import *
 from ultralytics.nn.modules.DEMAttention import *
 from ultralytics.nn.modules.MLAttention import *
 from ultralytics.nn.modules.LCAttention import *
-
+from ultralytics.nn.modules.EPSA import *
 
 from ultralytics.nn.modules import (
     C3k2_DFF_1, 
@@ -1687,7 +1687,7 @@ def parse_model(d, ch, verbose=True):
             args = [c1]
 
 
-        elif m in {iEMA,CLCA,SECA,LGAM,DSAttention,DSLAM,SELA,DEMAttention,MLAttention,LCAttention}:
+        elif m in {iEMA,CLCA,SECA,LGAM,DSAttention,DSLAM,SELA,DEMAttention,MLAttention,LCAttention,EPSA}:
             c2 = ch[f]
             args = [c2,*args]
         
