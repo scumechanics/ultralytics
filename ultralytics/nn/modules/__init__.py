@@ -120,7 +120,7 @@ from .DSLAM import *
 from .SELA import *
 from .DEMAttention import *
 from .MLAttention import *
-
+from .LCAttention import *
 
 __all__ = (
     "C3k2_DFF_1",
