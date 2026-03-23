@@ -43,6 +43,8 @@ from ultralytics.nn.modules.MLAttention import *
 from ultralytics.nn.modules.LCAttention import *
 from ultralytics.nn.modules.EPSA import *
 
+from ultralytics.nn.modules.defect_focus import *
+
 from ultralytics.nn.modules import (
     C3k2_DFF_1, 
     C3k2_DFF_2,
@@ -1604,7 +1606,8 @@ def parse_model(d, ch, verbose=True):
             DeformableAttention2D,
             C2PSAiEMA,
             C2PSA_DSAM,
-            C2PSA_CLCA
+            C2PSA_CLCA,
+            DefectFocusAttention
         }
     )
     repeat_modules = frozenset(  # modules with 'repeat' arguments
@@ -1743,6 +1746,14 @@ def parse_model(d, ch, verbose=True):
            args   = [c_high, c_low, c_out, mode]
            c2     = c_out
 
+        elif m is DefectFocusAttention:
+            c1, c2 = ch[f], ch[f]  # 输入输出通道数相同
+            # args: [num_classes, use_heatmap, use_edge, use_hard_mining]
+            num_classes = args[0] if len(args) > 0 else 3
+            use_heatmap = args[1] if len(args) > 1 else True
+            use_edge = args[2] if len(args) > 2 else True
+            use_hard_mining = args[3] if len(args) > 3 else True
+            args = [c1, num_classes, use_heatmap, use_edge, use_hard_mining]
          ####attention  innovata
         elif m is DSAM:
             c1, c2 = ch[f], args[0]
