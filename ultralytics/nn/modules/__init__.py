@@ -124,6 +124,7 @@ from .LCAttention import *
 from .EPSA import *
 from .defect_focus import *
 from .ImprovedLGAM import *
+from .BinaryAttention import *
 
 __all__ = (
     "C3k2_DFF_1",
