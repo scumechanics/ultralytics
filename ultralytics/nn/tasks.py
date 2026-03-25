@@ -53,6 +53,8 @@ from ultralytics.nn.modules.EfficientViM import C3k2_EfficientVIM_att
 
 from ultralytics.nn.modules.RCSOSA import *
 
+from ultralytics.nn.modules.rcsosa_v2 import RCSOSA_V2, C3k2_RepVGG
+
 
 from ultralytics.nn.modules import (
     C3k2_DFF_1, 
@@ -1620,7 +1622,8 @@ def parse_model(d, ch, verbose=True):
             C3k2_BinaryAttention,
             C3k2_EfficientVIM_att,
             C3k2_RepVGG, 
-            RCSOSA
+            RCSOSA,
+            RCSOSA_V2, C3k2_RepVGG
             
         }
     )
@@ -1650,7 +1653,8 @@ def parse_model(d, ch, verbose=True):
             C3k2_BinaryAttention,
             C3k2_EfficientVIM_att,
             C3k2_RepVGG, 
-            RCSOSA
+            RCSOSA,
+            RCSOSA_V2, C3k2_RepVGG
         }
     )
     for i, (f, n, m, args) in enumerate(d["backbone"] + d["head"]):  # from, number, module, args
