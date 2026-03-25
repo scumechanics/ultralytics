@@ -51,6 +51,9 @@ from ultralytics.nn.modules.BinaryAttention import C3k2_BinaryAttention
 
 from ultralytics.nn.modules.EfficientViM import C3k2_EfficientVIM_att
 
+from ultralytics.nn.modules.RCSOSA import *
+
+
 from ultralytics.nn.modules import (
     C3k2_DFF_1, 
     C3k2_DFF_2,
@@ -1615,7 +1618,10 @@ def parse_model(d, ch, verbose=True):
             C2PSA_CLCA,
             DefectFocusAttention,
             C3k2_BinaryAttention,
-            C3k2_EfficientVIM_att
+            C3k2_EfficientVIM_att,
+            C3k2_RepVGG, 
+            RCSOSA
+            
         }
     )
     repeat_modules = frozenset(  # modules with 'repeat' arguments
@@ -1642,7 +1648,9 @@ def parse_model(d, ch, verbose=True):
             C3k2_EFAttention,
             C2PSA_DSAM,
             C3k2_BinaryAttention,
-            C3k2_EfficientVIM_att
+            C3k2_EfficientVIM_att,
+            C3k2_RepVGG, 
+            RCSOSA
         }
     )
     for i, (f, n, m, args) in enumerate(d["backbone"] + d["head"]):  # from, number, module, args
