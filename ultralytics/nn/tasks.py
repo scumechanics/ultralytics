@@ -65,6 +65,9 @@ from ultralytics.nn.modules.MANet import *
 
 from ultralytics.nn.modules.GCBlock import *
 
+from ultralytics.nn.modules.RepNCSPELAN4 import *
+
+
 from ultralytics.nn.modules import (
     C3k2_DFF_1, 
     C3k2_DFF_2,
@@ -1638,7 +1641,9 @@ def parse_model(d, ch, verbose=True):
             C3k2_GhostModule,
             MANet,
             C3k2_GCBlock_1,
-            C3k2_GCBlock_2
+            C3k2_GCBlock_2,
+            RepNCSPELAN4_high,
+            RepNCSPELAN4_low
             
         }
     )
