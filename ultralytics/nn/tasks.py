@@ -63,7 +63,7 @@ from ultralytics.nn.modules.EUCB2 import *
 
 from ultralytics.nn.modules.MANet import *
 
-from ultralytics.nn.modules.GCBlock import *
+# from ultralytics.nn.modules.GCBlock import *
 
 from ultralytics.nn.modules.RepNCSPELAN4 import *
 
@@ -1640,8 +1640,6 @@ def parse_model(d, ch, verbose=True):
             C3k2_BFAM_2,
             C3k2_GhostModule,
             MANet,
-            C3k2_GCBlock_1,
-            C3k2_GCBlock_2,
             RepNCSPELAN4_high,
             RepNCSPELAN4_low
             
@@ -1678,9 +1676,7 @@ def parse_model(d, ch, verbose=True):
             C3k2_BFAM_1,
             C3k2_BFAM_2,
             C3k2_GhostModule,
-            MANet,
-            C3k2_GCBlock_1,
-            C3k2_GCBlock_2
+            MANet
         }
     )
     for i, (f, n, m, args) in enumerate(d["backbone"] + d["head"]):  # from, number, module, args
