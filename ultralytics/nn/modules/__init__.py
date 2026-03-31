@@ -130,7 +130,7 @@ from .RCSOSA import *
 from .rcsosa_v2 import *
 from .BFAM import *
 from .GhostModule import *
-
+from .EUCB2 import *
 
 __all__ = (
     "C3k2_DFF_1",
