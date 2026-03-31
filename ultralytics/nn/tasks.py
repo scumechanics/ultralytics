@@ -61,6 +61,8 @@ from ultralytics.nn.modules.GhostModule import *
 
 from ultralytics.nn.modules.EUCB2 import *
 
+from ultralytics.nn.modules.MANet import *
+
 from ultralytics.nn.modules import (
     C3k2_DFF_1, 
     C3k2_DFF_2,
@@ -1631,7 +1633,8 @@ def parse_model(d, ch, verbose=True):
             RCSOSA_V2, C3k2_RepVGG,
             C3k2_BFAM_1,
             C3k2_BFAM_2,
-            C3k2_GhostModule
+            C3k2_GhostModule,
+            MANet
             
         }
     )
@@ -1665,7 +1668,8 @@ def parse_model(d, ch, verbose=True):
             RCSOSA_V2, C3k2_RepVGG,
             C3k2_BFAM_1,
             C3k2_BFAM_2,
-            C3k2_GhostModule
+            C3k2_GhostModule,
+            MANet
         }
     )
     for i, (f, n, m, args) in enumerate(d["backbone"] + d["head"]):  # from, number, module, args
