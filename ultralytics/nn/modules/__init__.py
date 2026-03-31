@@ -131,7 +131,7 @@ from .rcsosa_v2 import *
 from .BFAM import *
 from .GhostModule import *
 from .EUCB2 import *
-
+from .MANet import *
 __all__ = (
     "C3k2_DFF_1",
     "C3k2_DFF_2",
