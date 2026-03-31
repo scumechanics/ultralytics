@@ -1710,9 +1710,9 @@ def parse_model(d, ch, verbose=True):
             args = [ch[f], *args]
             c2 = args[1]
 
-        elif m is EUCB:
-            c2 = make_divisible(min(args[0], max_channels) * width, 8)
-            args = [ch[f],c2]
+        # elif m is EUCB:
+        #     c2 = make_divisible(min(args[0], max_channels) * width, 8)
+        #     args = [ch[f],c2]
 
         elif m is DCAFE:
             args = [ch[f]]
