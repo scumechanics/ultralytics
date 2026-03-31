@@ -133,6 +133,8 @@ from .GhostModule import *
 from .EUCB2 import *
 from .MANet import *
 from .GCBlock import *
+from .RepNCSPELAN4 import *
+
 
 __all__ = (
     "C3k2_DFF_1",
