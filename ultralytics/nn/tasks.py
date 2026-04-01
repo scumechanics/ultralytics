@@ -67,6 +67,8 @@ from ultralytics.nn.modules.MANet import *
 
 from ultralytics.nn.modules.RepNCSPELAN4 import *
 
+from ultralytics.nn.modules.RepNCSPELAN42 import *
+
 
 from ultralytics.nn.modules import (
     C3k2_DFF_1, 
@@ -1732,6 +1734,13 @@ def parse_model(d, ch, verbose=True):
         elif m in {DCAFE_V2, DCAFE_Lite, DCAFE_Hybrid}:
             c1, c2 = ch[f], args[0] if args else ch[f]
             args = [c1]
+
+        elif m in {RepNCSPELAN4}:
+            c1, c2 = ch[f], args[0]
+            if c2 != no:  # if not output
+                c2 = make_divisible(c2 * gw, 8)
+            args = [c1, c2, *args[1:]]
+                
 
 
         elif m in {iEMA,CLCA,SECA,LGAM,DSAttention,DSLAM,SELA,DEMAttention,MLAttention,LCAttention,EPSA,ImprovedLGAM,EUCB}:
