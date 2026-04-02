@@ -67,7 +67,7 @@ from ultralytics.nn.modules.MANet import *
 
 from ultralytics.nn.modules.RepNCSPELAN4 import *
 
-from ultralytics.nn.modules.RepNCSPELAN42 import *
+# from ultralytics.nn.modules.RepNCSPELAN42 import *
 
 
 from ultralytics.nn.modules import (
@@ -1735,11 +1735,11 @@ def parse_model(d, ch, verbose=True):
             c1, c2 = ch[f], args[0] if args else ch[f]
             args = [c1]
 
-        elif m in {RepNCSPELAN4}:
-            c1, c2 = ch[f], args[0]
-            if c2 != no:  # if not output
-                c2 = make_divisible(c2 * gw, 8)
-            args = [c1, c2, *args[1:]]
+        # elif m in {RepNCSPELAN4}:
+        #     c1, c2 = ch[f], args[0]
+        #     if c2 != no:  # if not output
+        #         c2 = make_divisible(c2 * gw, 8)
+        #     args = [c1, c2, *args[1:]]
                 
 
 
