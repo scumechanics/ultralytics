@@ -65,7 +65,7 @@ from ultralytics.nn.modules.MANet import *
 
 # from ultralytics.nn.modules.GCBlock import *
 
-from ultralytics.nn.modules.RepNCSPELAN4 import *
+# from ultralytics.nn.modules.RepNCSPELAN4 import *
 
 # from ultralytics.nn.modules.RepNCSPELAN42 import *
 
@@ -1642,8 +1642,8 @@ def parse_model(d, ch, verbose=True):
             C3k2_BFAM_2,
             C3k2_GhostModule,
             MANet,
-            RepNCSPELAN4_high,
-            RepNCSPELAN4_low
+            # RepNCSPELAN4_high,
+            # RepNCSPELAN4_low
             
         }
     )
