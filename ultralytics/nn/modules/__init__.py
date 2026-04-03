@@ -135,7 +135,7 @@ from .MANet import *
 # from .GCBlock import *
 # from .RepNCSPELAN4 import *
 # from .RepNCSPELAN42 import *
-
+from .GELAN import RepNCSPELAN4, SPPELAN
 __all__ = (
     "C3k2_DFF_1",
     "C3k2_DFF_2",
