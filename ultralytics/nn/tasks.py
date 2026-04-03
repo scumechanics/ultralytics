@@ -70,6 +70,8 @@ from ultralytics.nn.modules.MANet import *
 # from ultralytics.nn.modules.RepNCSPELAN42 import *
 
 
+from ultralytics.nn.modules.GELAN import RepNCSPELAN4, SPPELAN
+
 from ultralytics.nn.modules import (
     C3k2_DFF_1, 
     C3k2_DFF_2,
@@ -1642,6 +1644,7 @@ def parse_model(d, ch, verbose=True):
             C3k2_BFAM_2,
             C3k2_GhostModule,
             MANet,
+            RepNCSPELAN4, SPPELAN
             # RepNCSPELAN4_high,
             # RepNCSPELAN4_low
             
