@@ -65,14 +65,14 @@ from ultralytics.nn.modules.MANet import *
 
 # from ultralytics.nn.modules.GCBlock import *
 
-# from ultralytics.nn.modules.RepNCSPELAN4 import *
+from ultralytics.nn.modules.RepNCSPELAN4 import *
 
-# from ultralytics.nn.modules.RepNCSPELAN42 import *
+from ultralytics.nn.modules.RepNCSPELAN42 import *
 
 from ultralytics.nn.modules.Slimneck import GSConv, VoVGSCSP
 
 
-from ultralytics.nn.modules.GELAN import RepNCSPELAN4, SPPELAN
+# from ultralytics.nn.modules.GELAN import RepNCSPELAN4, SPPELAN
 
 from ultralytics.nn.modules import (
     C3k2_DFF_1, 
