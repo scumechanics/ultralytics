@@ -133,7 +133,7 @@ from .GhostModule import *
 from .EUCB2 import *
 from .MANet import *
 # from .GCBlock import *
-from .RepNCSPELAN4 import *
+from .RepNCSPELAN4 import RepNCSPELAN4_high,RepNCSPELAN4_low
 from .RepNCSPELAN42 import RepNCSPELAN4
 from .GELAN import RepNCSPELAN4, SPPELAN
 from .Slimneck import GSConv, VoVGSCSP
