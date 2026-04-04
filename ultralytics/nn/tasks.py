@@ -72,6 +72,8 @@ from ultralytics.nn.modules.RepNCSPELAN42 import RepNCSPELAN4
 
 from ultralytics.nn.modules.Slimneck import GSConv, VoVGSCSP
 
+from ultralytics.nn.modules.C3k2_ARConv import C3k2_ARConv
+
 
 # from ultralytics.nn.modules.GELAN import RepNCSPELAN4, SPPELAN
 
@@ -1650,7 +1652,8 @@ def parse_model(d, ch, verbose=True):
             # RepNCSPELAN4, SPPELAN,
             GSConv,VoVGSCSP,
             RepNCSPELAN4_high,
-            RepNCSPELAN4_low
+            RepNCSPELAN4_low,
+            C3k2_ARConv
             
         }
     )
@@ -1685,7 +1688,8 @@ def parse_model(d, ch, verbose=True):
             C3k2_BFAM_1,
             C3k2_BFAM_2,
             C3k2_GhostModule,
-            MANet
+            MANet,
+            C3k2_ARConv
         }
     )
     for i, (f, n, m, args) in enumerate(d["backbone"] + d["head"]):  # from, number, module, args
