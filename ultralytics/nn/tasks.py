@@ -1648,7 +1648,7 @@ def parse_model(d, ch, verbose=True):
             C3k2_GhostModule,
             MANet,
             # RepNCSPELAN4, SPPELAN,
-            GSConv, VoVGSCSP
+            GSConv,VoVGSCSP,
             RepNCSPELAN4_high,
             RepNCSPELAN4_low
             
