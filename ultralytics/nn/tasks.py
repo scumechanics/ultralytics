@@ -74,6 +74,7 @@ from ultralytics.nn.modules.Slimneck import GSConv, VoVGSCSP
 
 from ultralytics.nn.modules.C3k2_ARConv import C3k2_ARConv
 
+from ultralytics.nn.modules.RFB import BasicRFB 
 
 # from ultralytics.nn.modules.GELAN import RepNCSPELAN4, SPPELAN
 
@@ -1653,7 +1654,8 @@ def parse_model(d, ch, verbose=True):
             GSConv,VoVGSCSP,
             RepNCSPELAN4_high,
             RepNCSPELAN4_low,
-            C3k2_ARConv
+            C3k2_ARConv,
+            BasicRFB 
             
         }
     )
