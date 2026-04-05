@@ -138,6 +138,8 @@ from .RepNCSPELAN42 import RepNCSPELAN4
 # from .GELAN import RepNCSPELAN4, SPPELAN
 from .Slimneck import GSConv, VoVGSCSP
 from .C3k2_ARConv import C3k2_ARConv
+from .RFB import BasicRFB 
+
 
 __all__ = (
     "C3k2_DFF_1",
