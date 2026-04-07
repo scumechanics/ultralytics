@@ -84,6 +84,8 @@ from ultralytics.nn.modules.MogaSubBlock import MogaSubBlock
 
 from ultralytics.nn.modules.C3k2_DeepDBB import C3k2_DeepDBB 
 
+from ultralytics.nn.modules.LRSA import LRSA
+
 
 # from ultralytics.nn.modules.GELAN import RepNCSPELAN4, SPPELAN
 
@@ -1840,6 +1842,8 @@ def parse_model(d, ch, verbose=True):
         elif m in {MogaSubBlock}:
             args = [ch[f]]                        
 
+        elif m is LRSA:
+            args = [ch[f], *args]  
 
         
          ####attention  innovata
