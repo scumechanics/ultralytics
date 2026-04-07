@@ -143,7 +143,7 @@ from .RefConv import  RefConv
 from .MultiOrderGatedAggregation import MultiOrderGatedAggregation  
 from .MogaSubBlock import MogaSubBlock  
 from .C3k2_DeepDBB import C3k2_DeepDBB 
-
+from .LRSA import LRSA
 
 __all__ = (
     "C3k2_DFF_1",
