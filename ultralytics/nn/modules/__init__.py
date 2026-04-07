@@ -139,6 +139,7 @@ from .RepNCSPELAN42 import RepNCSPELAN4
 from .Slimneck import GSConv, VoVGSCSP
 from .C3k2_ARConv import C3k2_ARConv
 from .RFB import BasicRFB 
+from .RefConv import  RefConv 
 
 
 __all__ = (
