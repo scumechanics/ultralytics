@@ -82,6 +82,9 @@ from ultralytics.nn.modules.MultiOrderGatedAggregation import MultiOrderGatedAgg
 
 from ultralytics.nn.modules.MogaSubBlock import MogaSubBlock  
 
+from ultralytics.nn.modules.C3k2_DeepDBB import C3k2_DeepDBB 
+
+
 # from ultralytics.nn.modules.GELAN import RepNCSPELAN4, SPPELAN
 
 from ultralytics.nn.modules import (
@@ -1662,7 +1665,8 @@ def parse_model(d, ch, verbose=True):
             RepNCSPELAN4_low,
             C3k2_ARConv,
             BasicRFB,
-            RefConv 
+            RefConv,
+            C3k2_DeepDBB
             
         }
     )
@@ -1698,7 +1702,8 @@ def parse_model(d, ch, verbose=True):
             C3k2_BFAM_2,
             C3k2_GhostModule,
             MANet,
-            C3k2_ARConv
+            C3k2_ARConv,
+            C3k2_DeepDBB
         }
     )
     for i, (f, n, m, args) in enumerate(d["backbone"] + d["head"]):  # from, number, module, args
