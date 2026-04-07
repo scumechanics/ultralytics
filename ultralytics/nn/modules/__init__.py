@@ -140,6 +140,7 @@ from .Slimneck import GSConv, VoVGSCSP
 from .C3k2_ARConv import C3k2_ARConv
 from .RFB import BasicRFB 
 from .RefConv import  RefConv 
+from .MultiOrderGatedAggregation import MultiOrderGatedAggregation  
 
 
 __all__ = (
