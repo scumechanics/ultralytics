@@ -76,6 +76,8 @@ from ultralytics.nn.modules.C3k2_ARConv import C3k2_ARConv
 
 from ultralytics.nn.modules.RFB import BasicRFB 
 
+from ultralytics.nn.modules.RefConv import  RefConv 
+
 # from ultralytics.nn.modules.GELAN import RepNCSPELAN4, SPPELAN
 
 from ultralytics.nn.modules import (
@@ -1655,7 +1657,8 @@ def parse_model(d, ch, verbose=True):
             RepNCSPELAN4_high,
             RepNCSPELAN4_low,
             C3k2_ARConv,
-            BasicRFB 
+            BasicRFB,
+            RefConv 
             
         }
     )
