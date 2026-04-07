@@ -80,6 +80,8 @@ from ultralytics.nn.modules.RefConv import  RefConv
 
 from ultralytics.nn.modules.MultiOrderGatedAggregation import MultiOrderGatedAggregation 
 
+from ultralytics.nn.modules.MogaSubBlock import MogaSubBlock  
+
 # from ultralytics.nn.modules.GELAN import RepNCSPELAN4, SPPELAN
 
 from ultralytics.nn.modules import (
@@ -1828,6 +1830,11 @@ def parse_model(d, ch, verbose=True):
 
         elif m in {MultiOrderGatedAggregation}:
             args = [ch[f]]
+
+         
+        elif m in {MogaSubBlock}:
+            args = [ch[f]]                        
+
 
         
          ####attention  innovata
