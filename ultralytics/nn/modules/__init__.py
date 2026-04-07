@@ -141,6 +141,7 @@ from .C3k2_ARConv import C3k2_ARConv
 from .RFB import BasicRFB 
 from .RefConv import  RefConv 
 from .MultiOrderGatedAggregation import MultiOrderGatedAggregation  
+from .MogaSubBlock import MogaSubBlock  
 
 
 __all__ = (
