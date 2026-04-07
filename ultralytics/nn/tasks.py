@@ -78,6 +78,8 @@ from ultralytics.nn.modules.RFB import BasicRFB
 
 from ultralytics.nn.modules.RefConv import  RefConv 
 
+from ultralytics.nn.modules.MultiOrderGatedAggregation import MultiOrderGatedAggregation 
+
 # from ultralytics.nn.modules.GELAN import RepNCSPELAN4, SPPELAN
 
 from ultralytics.nn.modules import (
@@ -1823,6 +1825,11 @@ def parse_model(d, ch, verbose=True):
             use_edge = args[2] if len(args) > 2 else True
             use_hard_mining = args[3] if len(args) > 3 else True
             args = [c1, num_classes, use_heatmap, use_edge, use_hard_mining]
+
+        elif m in {MultiOrderGatedAggregation}:
+            args = [ch[f]]
+
+        
          ####attention  innovata
         elif m is DSAM:
             c1, c2 = ch[f], args[0]
