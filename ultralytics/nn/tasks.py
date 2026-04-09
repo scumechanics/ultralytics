@@ -86,7 +86,7 @@ from ultralytics.nn.modules.C3k2_DeepDBB import C3k2_DeepDBB
 
 from ultralytics.nn.modules.LRSA import LRSA
 
-from ultralytics.nn.modules.C3K2_CBSA import C3k2_CBSA
+from ultralytics.nn.modules.C3k2_CBSA import C3k2_CBSA
 
 # from ultralytics.nn.modules.GELAN import RepNCSPELAN4, SPPELAN
 
