@@ -144,7 +144,7 @@ from .MultiOrderGatedAggregation import MultiOrderGatedAggregation
 from .MogaSubBlock import MogaSubBlock  
 from .C3k2_DeepDBB import C3k2_DeepDBB 
 from .LRSA import LRSA
-from .C3K2_CBSA import C3k2_CBSA
+from .C3k2_CBSA import C3k2_CBSA
 __all__ = (
     "C3k2_DFF_1",
     "C3k2_DFF_2",
