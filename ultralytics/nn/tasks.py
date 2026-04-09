@@ -86,6 +86,7 @@ from ultralytics.nn.modules.C3k2_DeepDBB import C3k2_DeepDBB
 
 from ultralytics.nn.modules.LRSA import LRSA
 
+from ultralytics.nn.modules.C3K2_CBSA import C3k2_CBSA
 
 # from ultralytics.nn.modules.GELAN import RepNCSPELAN4, SPPELAN
 
@@ -1668,7 +1669,8 @@ def parse_model(d, ch, verbose=True):
             C3k2_ARConv,
             BasicRFB,
             RefConv,
-            C3k2_DeepDBB
+            C3k2_DeepDBB,
+            C3k2_CBSA
             
         }
     )
@@ -1705,7 +1707,9 @@ def parse_model(d, ch, verbose=True):
             C3k2_GhostModule,
             MANet,
             C3k2_ARConv,
-            C3k2_DeepDBB
+            C3k2_DeepDBB,
+            C3k2_CBSA
+            
         }
     )
     for i, (f, n, m, args) in enumerate(d["backbone"] + d["head"]):  # from, number, module, args
