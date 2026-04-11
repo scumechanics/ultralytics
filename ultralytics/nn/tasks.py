@@ -88,6 +88,8 @@ from ultralytics.nn.modules.LRSA import LRSA
 
 from ultralytics.nn.modules.C3k2_CBSA import C3k2_CBSA
 
+from ultralytics.nn.modules.MFCA import MultiFrequencyChannelAttention
+
 # from ultralytics.nn.modules.GELAN import RepNCSPELAN4, SPPELAN
 
 from ultralytics.nn.modules import (
@@ -1848,6 +1850,9 @@ def parse_model(d, ch, verbose=True):
 
         elif m is LRSA:
             args = [ch[f], *args]  
+
+        elif m is MultiFrequencyChannelAttention:
+            args = [ch[f], *args]   
 
         
          ####attention  innovata
