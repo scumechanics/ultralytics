@@ -90,6 +90,8 @@ from ultralytics.nn.modules.C3k2_CBSA import C3k2_CBSA
 
 from ultralytics.nn.modules.MFCA import MultiFrequencyChannelAttention
 
+from ultralytics.nn.modules.MSAA import MSAA
+
 # from ultralytics.nn.modules.GELAN import RepNCSPELAN4, SPPELAN
 
 from ultralytics.nn.modules import (
@@ -1774,7 +1776,15 @@ def parse_model(d, ch, verbose=True):
                 c2 = make_divisible(c2 * gw, 8)
             args = [c1, c2, *args[1:]]
                 
+        elif m is MSAA:
+            c1 = sum(ch[x] for x in f)
+            c2 = args[0]
+            if c2 != nc:
+                c2 = make_divisible(min(c2, max_channels) * width, 8)
+            args = [c1, c2, *args[1:]]
 
+        
+        
 
         elif m in {iEMA,CLCA,SECA,LGAM,DSAttention,DSLAM,SELA,DEMAttention,MLAttention,LCAttention,EPSA,ImprovedLGAM,EUCB}:
             c2 = ch[f]
