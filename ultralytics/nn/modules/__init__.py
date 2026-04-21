@@ -147,6 +147,7 @@ from .LRSA import LRSA
 from .C3k2_CBSA import C3k2_CBSA
 from .MFCA import MultiFrequencyChannelAttention
 from .MSAA import MSAA
+from .ShuffleAttn import ShuffleAttn
 __all__ = (
     "C3k2_DFF_1",
     "C3k2_DFF_2",
