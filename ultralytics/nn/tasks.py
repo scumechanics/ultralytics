@@ -91,6 +91,7 @@ from ultralytics.nn.modules.C3k2_CBSA import C3k2_CBSA
 from ultralytics.nn.modules.MFCA import MultiFrequencyChannelAttention
 
 from ultralytics.nn.modules.MSAA import MSAA
+from ultralytics.nn.modules.ShuffleAttn import ShuffleAttn
 
 # from ultralytics.nn.modules.GELAN import RepNCSPELAN4, SPPELAN
 
@@ -1863,6 +1864,11 @@ def parse_model(d, ch, verbose=True):
 
         elif m is MultiFrequencyChannelAttention:
             args = [ch[f], *args]   
+
+        elif m is ShuffleAttn:
+            args = [ch[f], ch[f], *args]
+
+
 
         
          ####attention  innovata
