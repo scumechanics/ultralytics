@@ -148,6 +148,7 @@ from .C3k2_CBSA import C3k2_CBSA
 from .MFCA import MultiFrequencyChannelAttention
 from .MSAA import MSAA
 from .ShuffleAttn import ShuffleAttn
+from .MSHConv import MSHC
 __all__ = (
     "C3k2_DFF_1",
     "C3k2_DFF_2",
@@ -238,5 +239,6 @@ __all__ = (
     'BiFPN_Layer',
     'ScalarWeightedFusion',
     'ChannelAttentionFusion',
-    'C2PSA_SDFAPB', 'SG_CAFusion', 'SaliencyAuxLoss'
+    'C2PSA_SDFAPB', 'SG_CAFusion', 'SaliencyAuxLoss',
+    'MSHC'
 )
